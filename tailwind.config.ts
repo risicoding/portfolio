@@ -8,9 +8,13 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-poppins)"],
+        preahvihear: ["var(--font-preahvihear)"],
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#9857D3",
+        secondary: "#2B0B3A",
       },
     },
   },
