@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.radial-gradient{
-  background:radial-gradient(circle at center, #9857D3 ,transparent 70%  )
+.radial-gradient {
+  background: radial-gradient(circle at center, #9857d3, transparent 80%);
+}
+
+.radial-gradient-stack {
+  background: radial-gradient(circle at center, #9857d3, transparent 95%);
+}
+
+.radial-gradient-top {
+  background: radial-gradient(circle at top, #2b0b3a, transparent 70%);
 }

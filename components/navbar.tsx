@@ -1,10 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
 
 const NavItem = ({ children }: { children: React.ReactNode }) => (
-  <li className="cursor-pointer select-none transition duration-300 hover:text-gray-200 hover:underline hover:underline-offset-2">
+  <li className="cursor-pointer select-none  transition-colors duration-300 hover:text-primary text-gray-300">
     {children}
   </li>
 );
@@ -15,31 +14,36 @@ export const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="px-6 py-4 shadow-md">
-      <div className="container mx-auto flex items-center sm:justify-center justify-start">
-        {/* Hamburger menu for small screens */}
-        <div className="sm:hidden">
+    <>
+      {/* Navbar */}
+      <nav className="shadow-xs sm:border-1 fixed left-0 right-0 top-0 z-50 border-b border-white/20 bg-gray-600/10 bg-opacity-60 px-6 py-4 shadow-inner shadow-zinc-800/10 backdrop-blur-md sm:left-4 sm:right-4 sm:top-4 sm:rounded-full">
+        <div className="flex w-full items-center justify-start sm:justify-center">
+          {/* Subtle Hamburger Icon */}
           <button
             onClick={toggleMenu}
-            className="text-white focus:outline-none"
+            className="text-gray-200 focus:outline-none sm:hidden"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            <div className="space-y-1">
+              <span className="block h-[2px] w-4 rounded-full bg-gradient-to-r from-gray-200/70 to-gray-200/60"></span>
+              <span className="block h-[3px] w-5 rounded-full bg-gradient-to-r from-gray-200/70 to-gray-200/60"></span>
+              <span className="block h-[4px] w-6 rounded-full bg-gradient-to-r from-gray-200/70 to-gray-200/60"></span>
+            </div>
           </button>
+
+          {/* Desktop menu */}
+          <ul className="hidden items-center gap-8 sm:flex">
+            <NavItem>Home</NavItem>
+            <NavItem>Tech stack</NavItem>
+            <NavItem>Projects</NavItem>
+            <NavItem>Contact</NavItem>
+          </ul>
         </div>
+      </nav>
 
-        {/* Desktop menu */}
-        <ul className="hidden items-center justify-center gap-8 text-sm text-gray-300 sm:flex">
-          <NavItem>Home</NavItem>
-          <NavItem>Tech stack</NavItem>
-          <NavItem>Projects</NavItem>
-          <NavItem>Contact</NavItem>
-        </ul>
-      </div>
-
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       {isOpen && (
-        <div className="mt-4 absolute size-44  sm:hidden">
-          <ul className="flex flex-col items-center gap-4 text-sm text-gray-300">
+        <div className="border-1 fixed mx-4 mt-16 w-[150px] rounded-xl border-white/20 bg-gray-900/10 bg-opacity-80 p-6 shadow-lg backdrop-blur-md sm:hidden">
+          <ul className="flex flex-col items-center gap-4 text-base text-gray-200">
             <NavItem>Home</NavItem>
             <NavItem>Tech stack</NavItem>
             <NavItem>Projects</NavItem>
@@ -47,25 +51,6 @@ export const Navbar = () => {
           </ul>
         </div>
       )}
-    </nav>
+    </>
   );
 };
-
-// export const Navbar = () => (
-//   <nav className="py-3">
-//     <ul className="hidden sm:flex items-center justify-center gap-6 text-sm text-gray-300">
-//       <li className="cursor-pointer select-none transition duration-300 hover:text-gray-200 hover:underline hover:underline-offset-1">
-//         Home
-//       </li>
-//       <li className="cursor-pointer select-none transition duration-300 hover:text-gray-200 hover:underline hover:underline-offset-1">
-//         Tech stack
-//       </li>
-//       <li className="cursor-pointer select-none transition duration-300 hover:text-gray-200 hover:underline hover:underline-offset-1">
-//         Projects
-//       </li>
-//       <li className="cursor-pointer select-none transition duration-300 hover:text-gray-200 hover:underline hover:underline-offset-1">
-//         Contact
-//       </li>
-//     </ul>
-//   </nav>
-// );
