@@ -1,6 +1,14 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "motion/react";
 export const Hero = () => (
-  <section className="radialGradient flex flex-col items-center justify-start px-8 pb-14 pt-32 sm:text-start">
+  <motion.section
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.3, duration: 0.2, ease: "easeInOut" }}
+    className="radialGradient flex flex-col items-center justify-start px-8 pb-14 pt-32 sm:text-start"
+  >
     <div className="flex flex-col items-center gap-3 text-center sm:flex-row sm:text-start">
       {" "}
       <Image
@@ -33,7 +41,7 @@ export const Hero = () => (
         </p>{" "}
       </div>{" "}
     </div>{" "}
-  </section>
+  </motion.section>
 );
 // import Image from "next/image";
 //

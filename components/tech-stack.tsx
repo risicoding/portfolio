@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "motion/react";
 import Image from "next/image";
 
 const technologies = [
@@ -23,14 +25,26 @@ const technologies = [
 
 export default function TechStack() {
   return (
-    <div className="px-4 text-white sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.6, duration: 0.2, ease: "easeIn" }}
+      className="px-4 text-white sm:px-6 lg:px-8"
+    >
       <div className="mx-auto max-w-3xl">
         <h2 className="mb-8 text-center text-2xl font-extrabold">
           <span className="text-primary">Tech Stack</span>
         </h2>
         <div className="flex flex-wrap items-center justify-center gap-8">
-          {technologies.map((tech) => (
-            <div key={tech.name} className="flex flex-col items-center">
+          {technologies.map((tech, index) => (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileTap={{ y: -20 }}
+              transition={{ delay: index * 0.1, type: "spring" }}
+              key={tech.name}
+              className="flex flex-col items-center"
+            >
               <div className="radial-gradient-stack mb-4 flex size-12 items-center justify-center overflow-hidden rounded-full border-2 border-primary/5 bg-primary p-[13px] transition-transform hover:scale-110 hover:bg-purple-900">
                 <Image
                   src={tech.icon || "/placeholder.svg"}
@@ -43,10 +57,10 @@ export default function TechStack() {
               <span className="text-xs font-medium text-gray-300">
                 {tech.name}
               </span>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

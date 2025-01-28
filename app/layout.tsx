@@ -22,7 +22,7 @@ const RootLayout = ({ children }: { children: Readonly<React.ReactNode> }) => {
       <body className="min-h-screen bg-black text-white">
         <Navbar />
         {children}
-     </body>
+      </body>
     </html>
   );
 };

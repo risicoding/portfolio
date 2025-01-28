@@ -1,24 +1,45 @@
+"use client";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { motion } from "motion/react";
+import Link from "next/link";
 
-interface ProjectItemProps {
+type StackImageProps = {
+  src: string;
+  width?: number;
+  height?: number;
+  alt: string;
+};
+
+export interface ProjectItemProps {
+  index: number;
   title: string;
   description: string;
   image: string;
+  href:string
   imageAlt: string;
   direction: "ltr" | "rtl";
   isBuilding?: boolean;
+  stacks: StackImageProps[];
 }
 const ProjectItem = ({
   title,
   description,
   image,
+  href,
   imageAlt,
   direction,
   isBuilding,
+  stacks,
 }: ProjectItemProps) => {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.4 }}
+    >
+      <Link href={href}>
+
       {/* Div shown on small devices */}
       <div className="flex flex-col overflow-hidden rounded-xl bg-primary/15 p-0 text-center sm:hidden">
         <div className="h-36 w-full overflow-hidden rounded-t-xl bg-white object-contain">
@@ -82,30 +103,27 @@ const ProjectItem = ({
           </div>
         </div>
       </div>
-    </>
+
+      <div
+        className={cn(
+          "relative bottom-8 hidden gap-2 px-12 py-2 sm:flex",
+          direction === "rtl" && "flex-row-reverse",
+        )}
+      >
+        {stacks.map((itx, index) => (
+          <Image
+            key={index}
+            src={itx.src}
+            className="rounded-full bg-purple-400/70 p-1"
+            height={itx.height || 20}
+            width={itx.width || 20}
+            alt={itx.alt || "stack-image"}
+          />
+        ))}
+      </div>
+      </Link>
+    </motion.div>
   );
 };
 
 export default ProjectItem;
-
-// const ProjectItem = () => {
-//   return (
-//     <div className="flex flex-col items-center justify-center p-6 sm:flex-row">
-//       {/* Left Card with Glassmorphism */}
-//       <div className="sm:border-1 shadow-xs relative sm:left-6 w-4/5 border-white/20 bg-gray-400/10 bg-opacity-60 p-6 shadow-inner shadow-zinc-800/10 backdrop-blur-md sm:relative sm:z-20 sm:rounded-xl">
-//         <h3 className="text-xl font-semibold text-white">Project Title</h3>
-//         <p className="mt-2 text-sm text-gray-300">
-//           This is a brief description of the project. Add details about the
-//           purpose, technologies used, or any notable features.
-//         </p>
-//       </div>
-//
-//       {/* Right Card with Thumbnail */}
-//       <div className="relative bg-primary/40 right-4 w-full sm:h-56 rounded-xl bg-red-50  overflow-hidden shadow-md sm:w-1/2">
-//         <div className="size-full bg-white relative top-5 left-5  rounded-xl"></div>
-//       </div>
-//     </div>
-//   );
-// };
-//
-// export default ProjectItem;

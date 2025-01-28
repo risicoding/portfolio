@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "motion/react";
 
 const NavItem = ({ children }: { children: React.ReactNode }) => (
-  <li className="cursor-pointer select-none  transition-colors duration-300 hover:text-primary text-gray-300">
+  <li className="cursor-pointer select-none text-gray-300 transition-colors duration-300 hover:text-primary">
     {children}
   </li>
 );
@@ -16,7 +17,11 @@ export const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className="shadow-xs sm:border-1 fixed left-0 right-0 top-0 z-50 border-b border-white/20 bg-gray-600/10 bg-opacity-60 px-6 py-4 shadow-inner shadow-zinc-800/10 backdrop-blur-md sm:left-4 sm:right-4 sm:top-4 sm:rounded-full">
+      <motion.nav
+        initial={{ y: -70 }}
+        animate={{ y: 0 }}
+        className="shadow-xs sm:border-1 fixed left-0 right-0 top-0 z-50 border-b border-white/20 bg-gray-600/10 bg-opacity-60 px-6 py-4 shadow-inner shadow-zinc-800/10 backdrop-blur-md sm:left-4 sm:right-4 sm:top-4 sm:rounded-full"
+      >
         <div className="flex w-full items-center justify-start sm:justify-center">
           {/* Subtle Hamburger Icon */}
           <button
@@ -38,7 +43,7 @@ export const Navbar = () => {
             <NavItem>Contact</NavItem>
           </ul>
         </div>
-      </nav>
+      </motion.nav>
 
       {/* Mobile Menu */}
       {isOpen && (
