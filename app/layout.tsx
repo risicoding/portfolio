@@ -20,7 +20,7 @@ const RootLayout = ({ children }: { children: Readonly<React.ReactNode> }) => {
   return (
     <html lang="en" className={`${poppins.variable} ${preahvihear.variable}`}>
       <body className="min-h-screen bg-black text-white">
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
       </body>
     </html>

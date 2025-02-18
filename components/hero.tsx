@@ -6,6 +6,7 @@ export const Hero = () => (
   <motion.section
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
     transition={{ delay: 0.3, duration: 0.2, ease: "easeInOut" }}
     className="radialGradient flex flex-col items-center justify-start px-8 pb-14 pt-32 sm:text-start"
   >

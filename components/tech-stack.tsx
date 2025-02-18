@@ -27,6 +27,7 @@ export default function TechStack() {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
+      viewport={{ once: true }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.6, duration: 0.2, ease: "easeIn" }}
       className="px-4 text-white sm:px-6 lg:px-8"
@@ -40,6 +41,7 @@ export default function TechStack() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               whileTap={{ y: -20 }}
               transition={{ delay: index * 0.1, type: "spring" }}
               key={tech.name}
