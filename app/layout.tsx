@@ -1,4 +1,3 @@
-import { Navbar } from "@/components/navbar";
 import "./globals.css";
 import { Poppins, Preahvihear } from "next/font/google";
 
