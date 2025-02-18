@@ -8,12 +8,35 @@ const ProjectItem = dynamic(() => import("@/components/project-item"), {
 const projects: ProjectItemProps[] = [
   {
     index: 0,
+    title: "Zenmarks",
+    description:
+      "Manage the chaos of your online life with my bookmark link management tool",
+    image: "/Zenmarks-mockup.jpg",
+    href: "https://zenmarks-five.vercel.app/",
+    imageAlt: "Zenmarks-mockup",
+    direction: "ltr",
+    stacks: [
+      { src: "/stack/next.svg", alt: "next-image" },
+      { src: "/stack/tailwind.svg", alt: "tailwind-image" },
+      {
+        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIYoesVkiL5oNshOSby_rzSjDCJLunRIhrbzOYXtGVa3NmlJuZ3w_6iw_Z&s=10",
+        alt: "shadcn",
+      },
+      {
+        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKfyeg7pTXz_qzomvLR0qMCdrqL80LjMYfSq7zA9SQQla3RhTx3uWoEc8&s=10",
+        alt: "Shadcn",
+      },
+    ],
+  },
+
+  {
+    index: 1,
     title: "Projex",
     description: "A project management kanban board to make your life easier",
     image: "/projex.jpg",
     href: "https://projex-ruby.vercel.app/",
     imageAlt: "projex-mockup",
-    direction: "ltr",
+    direction: "rtl",
     stacks: [
       { src: "/stack/next.svg", alt: "next-image" },
       { src: "/stack/prisma.svg", alt: "prisma-image" },
@@ -21,14 +44,14 @@ const projects: ProjectItemProps[] = [
     ],
   },
   {
-    index: 1,
+    index: 2,
     title: "Habit streaks",
     href: "https://habitstreaks.vercel.app/",
     description:
       "Never miss 2 habits in a row with a github style habit tracker",
     image: "/habit-streaks.jpg",
     imageAlt: "habit-streaks-mockup",
-    direction: "rtl",
+    direction: "ltr",
     stacks: [
       { src: "/stack/next.svg", alt: "next-image" },
       { src: "/stack/prisma.svg", alt: "prisma-image" },

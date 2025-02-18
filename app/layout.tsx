@@ -19,8 +19,12 @@ const RootLayout = ({ children }: { children: Readonly<React.ReactNode> }) => {
   return (
     <html lang="en" className={`${poppins.variable} ${preahvihear.variable}`}>
       <body className="min-h-screen bg-black text-white">
-        {/* <Navbar /> */}
+<div className="max-w-3xl mx-auto">
+
         {children}
+
+</div>
+        {/* <Navbar /> */}
       </body>
     </html>
   );

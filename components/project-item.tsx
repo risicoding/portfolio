@@ -111,7 +111,7 @@ const ProjectItem = ({
           )}
         >
           {stacks.map((itx, index) => (
-            <Image
+            <img
               key={index}
               src={itx.src}
               className="rounded-full bg-purple-400/70 p-1"
