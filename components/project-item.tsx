@@ -1,7 +1,5 @@
-"use client";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { motion } from "motion/react";
 import Link from "next/link";
 
 type StackImageProps = {
@@ -33,15 +31,10 @@ const ProjectItem = ({
   stacks,
 }: ProjectItemProps) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: 0.4 }}
-    >
+    <div>
       <Link href={href}>
         {/* Div shown on small devices */}
-        <div className="flex flex-col overflow-hidden rounded-xl bg-primary/15 p-0 text-center sm:hidden">
+        <div className="flex flex-col overflow-hidden rounded-xl p-0 text-center sm:hidden">
           <div className="h-36 w-full overflow-hidden rounded-t-xl bg-white object-contain">
             <Image
               className="w-full"
@@ -51,7 +44,7 @@ const ProjectItem = ({
               alt={imageAlt}
             />
           </div>
-          <div className="radial-gradient-top rounded-b-xl p-4">
+          <div className="radial-gradient-top rounded-b-xl p-4 bg-neutral-800/80">
             <h3 className="text-xl font-semibold text-white">{title}</h3>
             <p className="mt-2 text-sm text-gray-300">{description}</p>
           </div>
@@ -65,15 +58,15 @@ const ProjectItem = ({
         >
           <div
             className={cn(
-              "sm:border-1 shadow-xs relative w-4/5 border-white/20 bg-gray-300/5 bg-opacity-60 px-8 py-6 shadow-inner shadow-zinc-800/10 backdrop-blur-md sm:relative sm:z-20 sm:rounded-xl",
+              "sm:border-1 shadow-xs relative w-4/5 border-white/20 bg-neutral-300/5 bg-opacity-60 px-8 py-6 backdrop-blur-md sm:relative sm:z-20 sm:rounded-xl",
               direction === "ltr" ? "left-3" : "right-4 pl-12",
             )}
           >
             <div className="flex items-center gap-3">
               <h3 className="text-xl font-semibold text-white">{title}</h3>
               {isBuilding && (
-                <div className="flex items-center gap-2 rounded-full border-2 border-blue-500/95 bg-blue-600/50 bg-opacity-50 px-2 py-1 text-xs">
-                  <div className="size-2 animate-pulse rounded-full bg-blue-500/95" />
+                <div className="border-1 flex items-center gap-2 rounded-full border-neutral-300 bg-neutral-600/50 bg-opacity-50 px-2 py-[2px] text-xs">
+                  <div className="size-2 animate-pulse rounded-full bg-neutral-300" />
                   <span>Building</span>
                 </div>
               )}
@@ -83,7 +76,7 @@ const ProjectItem = ({
 
           <div
             className={cn(
-              "relative w-full overflow-hidden rounded-xl bg-primary/30 bg-gradient-to-br from-primary/30 via-primary/10 to-primary/10 sm:h-40 sm:w-1/2",
+              "relative w-full overflow-hidden rounded-xl bg-gradient-to-br from-neutral-50/40 via-neutral-400/20 to-neutral-50/5 sm:h-40 sm:w-1/2",
               direction === "ltr" ? "right-4" : "left-4 bg-gradient-to-bl",
             )}
           >
@@ -114,7 +107,7 @@ const ProjectItem = ({
             <img
               key={index}
               src={itx.src}
-              className="rounded-full bg-purple-400/70 p-1"
+              className="rounded-full bg-neutral-50/20 p-1"
               height={itx.height || 20}
               width={itx.width || 20}
               alt={itx.alt || "stack-image"}
@@ -122,7 +115,7 @@ const ProjectItem = ({
           ))}
         </div>
       </Link>
-    </motion.div>
+    </div>
   );
 };
 

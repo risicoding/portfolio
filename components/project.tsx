@@ -1,10 +1,7 @@
-"use client";
-import dynamic from "next/dynamic";
 import { ProjectItemProps } from "./project-item";
 
-const ProjectItem = dynamic(() => import("@/components/project-item"), {
-  ssr: false,
-});
+import ProjectItem from "./project-item";
+
 const projects: ProjectItemProps[] = [
   {
     index: 0,
@@ -14,6 +11,7 @@ const projects: ProjectItemProps[] = [
     image: "/Zenmarks-mockup.jpg",
     href: "https://zenmarks-five.vercel.app/",
     imageAlt: "Zenmarks-mockup",
+isBuilding:true,
     direction: "ltr",
     stacks: [
       { src: "/stack/next.svg", alt: "next-image" },
@@ -71,7 +69,7 @@ const projects: ProjectItemProps[] = [
 
 export const Projects = () => (
   <div className="space-y-4 px-4 py-24 sm:px-0">
-    <h2 className="text-center text-2xl font-extrabold text-primary">
+    <h2 className="text-center text-2xl font-extrabold text-white">
       Projects
     </h2>
     <div className="space-y-8">

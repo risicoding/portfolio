@@ -8,8 +8,8 @@ const Page = () => {
   return (
     <div>
       <Hero />
-      <TechStack />
       <Projects />
+      <TechStack />
       <Footer />
     </div>
   );
