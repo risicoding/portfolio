@@ -22,9 +22,11 @@ export const Hero = () => {
               </span>
               developer
             </h1>
-            <button className="rounded-xl bg-white px-4 py-2 text-sm font-thin text-black">
-              Connect with me
-            </button>
+            <a href="#footer" className="inline-block">
+              <button className="rounded-xl bg-white px-4 py-2 text-sm font-thin text-black">
+                Connect with me
+              </button>
+            </a>
           </div>
         </div>
       </div>
