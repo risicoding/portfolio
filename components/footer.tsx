@@ -5,7 +5,7 @@ import {
 } from "react-icons/fa6";
 
 export const Footer = () => (
-  <div className="space-y-4 p-8 text-white">
+  <div className="space-y-4 px-8 pb-8 pt-24 text-white">
     <h3>risimn7@gmail.com</h3>
     <div className="flex gap-4">
       <a href="https://github.com/risicoding/">

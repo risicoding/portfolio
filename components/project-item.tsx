@@ -44,7 +44,7 @@ const ProjectItem = ({
               alt={imageAlt}
             />
           </div>
-          <div className="radial-gradient-top rounded-b-xl p-4 bg-neutral-800/80">
+          <div className="radial-gradient-top rounded-b-xl bg-neutral-800/80 p-4">
             <h3 className="text-xl font-semibold text-white">{title}</h3>
             <p className="mt-2 text-sm text-gray-300">{description}</p>
           </div>

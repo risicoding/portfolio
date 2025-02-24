@@ -11,7 +11,7 @@ const projects: ProjectItemProps[] = [
     image: "/Zenmarks-mockup.jpg",
     href: "https://zenmarks-five.vercel.app/",
     imageAlt: "Zenmarks-mockup",
-isBuilding:true,
+    isBuilding: true,
     direction: "ltr",
     stacks: [
       { src: "/stack/next.svg", alt: "next-image" },
@@ -69,9 +69,7 @@ isBuilding:true,
 
 export const Projects = () => (
   <div className="space-y-4 px-4 py-24 sm:px-0">
-    <h2 className="text-center text-2xl font-extrabold text-white">
-      Projects
-    </h2>
+    <h2 className="text-center text-2xl font-extrabold text-white">Projects</h2>
     <div className="space-y-8">
       {projects.map((project) => (
         <ProjectItem
