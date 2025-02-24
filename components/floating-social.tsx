@@ -49,7 +49,7 @@ const FloatingSocial = () => {
 };
 
 const IconRenderer = ({ src, href }: { src: string; href: string }) => (
-  <a href={href}>
+  <a target="_blank" href={href}>
     <Image src={src} width={20} height={20} alt={src} />
   </a>
 );
